@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
+public class PaddleController : MonoBehaviour
 {
     public int speed;
 
@@ -34,6 +34,7 @@ public class playerMovement : MonoBehaviour
 
     private void MoveObject(Vector2 movement){
         // transform.Translate(movement * Time.deltaTime);
+        Debug.Log("TEST: " + movement);
         rig.velocity = movement;
     }
 }

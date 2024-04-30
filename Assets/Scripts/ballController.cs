@@ -8,16 +8,15 @@ public class ballController : MonoBehaviour
     // speed tidak memiliki method agar bisa diatur nilai variablenya oleh dev
 
     private Rigidbody2D rig;
+    public Vector2 resetPosition;
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         rig.velocity = speed;
     }
 
-    // Update is called once per frame
-    private void Update()
+    public void ResetBall()
     {
-        // Vector3 => class unity untuk object dengan 3 vector(x, y, z)
-        transform.Translate(speed * Time.deltaTime);
+        transform.position = new Vector3(resetPosition.x, resetPosition.y, 2);
     }
 }
