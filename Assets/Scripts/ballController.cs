@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ballController : MonoBehaviour
+public class BallController : MonoBehaviour
 {
     public Vector2 speed; 
     // speed tidak memiliki method agar bisa diatur nilai variablenya oleh dev
@@ -18,5 +18,9 @@ public class ballController : MonoBehaviour
     public void ResetBall()
     {
         transform.position = new Vector3(resetPosition.x, resetPosition.y, 2);
+    }
+    public void ActivatePUSpeedUp(float magnitude)
+    {
+        rig.velocity *= magnitude;
     }
 }

@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     public int rightScore;
     public int leftScore;
     public int maxScore;
-    public ballController ball;
+    public BallController ball;
     public void AddRightScore(int increment)
     {
         rightScore += increment;
