@@ -5,8 +5,6 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     public Vector2 speed; 
-    // speed tidak memiliki method agar bisa diatur nilai variablenya oleh dev
-
     private Rigidbody2D rig;
     public Vector2 resetPosition;
     private void Start()
@@ -19,8 +17,14 @@ public class BallController : MonoBehaviour
     {
         transform.position = new Vector3(resetPosition.x, resetPosition.y, 2);
     }
-    public void ActivatePUSpeedUp(float magnitude)
+    public void ActivatePUSpeedUp(float magnitude, int duration)
     {
         rig.velocity *= magnitude;
+        StartCoroutine(DeactivatePowerUp(magnitude, duration));
+    }
+    public IEnumerator DeactivatePowerUp(float magnitude, int duration)
+    {
+        yield return new WaitForSeconds(duration);
+        rig.velocity /= magnitude;
     }
 }

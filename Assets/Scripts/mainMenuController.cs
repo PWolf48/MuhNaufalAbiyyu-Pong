@@ -10,9 +10,20 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
-
     public void OpenAuthor()
     {
         Debug.Log("Created By Chronos");
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }
